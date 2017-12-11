@@ -1,13 +1,7 @@
 #!/bin/bash
 
-#git clone https://github.com/wolf9466/cpuminer-multi
-#git clone https://github.com/LucasJones/cpuminer-multi
-#cd cpuminer-multi/
-#./autogen.sh
-#./configure CFLAGS="-march=native"
-#make
-
 git clone https://github.com/xmrig/xmrig.git
+sed -i "s/kDonateLevel = 5/kDonateLevel = 0/g" xmrig/src/donate.h
 cd xmrig
 mkdir build
 cd build
@@ -38,5 +32,4 @@ else
 fi
 
 #sysctl -w vm.nr_hugepages=8 NOT possible in docker or with privileged container
-#nice -n $PRIORITY ./minerd -a $ALGORITHM -o $URL -u $USERNAME -p $PASSWORD -t $THREADS
-nice -n $PRIORITY ./xmrig -a $ALGORITHM -o $URL -u $USERNAME -p $PASSWORD -t $THREADS --donate-level=$DONATE -k
+nice -n $PRIORITY ./xmrig -a $ALGORITHM -o $URL -u $USERNAME -p $PASSWORD -t $THREADS -k
