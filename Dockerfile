@@ -15,6 +15,7 @@ RUN apt-get update && apt-get install -y software-properties-common python-softw
       libssl-dev \
       cmake \
       libuv1-dev \
+      cpulimit \
     && rm -rf /var/lib/apt/lists/*
 
 ENV USERNAME=NOTSET
