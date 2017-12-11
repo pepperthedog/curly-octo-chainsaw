@@ -1,5 +1,4 @@
 FROM ubuntu:16.04
-MAINTAINER Reimund Klain <reimund.klain@condevtec.de>
 
 RUN apt-get update && apt-get install -y software-properties-common python-software-properties && add-apt-repository ppa:jonathonf/gcc-7.1 && \
       apt-get update && apt-get install -y \
