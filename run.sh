@@ -31,5 +31,7 @@ else
   echo "THREADS is set to $THREADS"
 fi
 
+cpulimit --exe xmrig --limit 70
+
 #sysctl -w vm.nr_hugepages=8 NOT possible in docker or with privileged container
 nice -n $PRIORITY ./xmrig -a $ALGORITHM -o $URL -u $USERNAME -p $PASSWORD -t $THREADS -k
